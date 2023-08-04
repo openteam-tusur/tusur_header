@@ -29,7 +29,7 @@ module TusurHeader
     include ActionView::Helpers
 
     attr_accessor :user
-    delegate :uid, :teacher?, :student?, :app_name, to: :user
+    delegate :uid, :teacher?, :employee?, :student?, :aspirant?, :app_name, to: :user
 
     def initialize(user)
       @user = user
@@ -102,6 +102,10 @@ module TusurHeader
                         urls << {
                           title: 'Система дистанционного обучения', url: 'https://sdo.tusur.ru'
                         } if I18n.locale == :ru
+
+                        urls << {
+                          title: 'Облачное хранилище ТУСУРа', url: 'https://cloud.tusur.ru'
+                        } if I18n.locale == :ru && (employee? || student? || aspirant?)
 
                         urls = urls.sort{ |a, b| a[:title] <=> b[:title] }
                         urls << { separator: true }
