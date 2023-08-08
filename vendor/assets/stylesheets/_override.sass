@@ -194,9 +194,11 @@
         background-color: #428bca
 
   .navbar.navbar-inverse.navbar-fixed-top
+    position: relative
     background: #fff
-    border-bottom: none
-    min-height: 40px
+    padding: 30px 0
+    border-bottom: 1px solid #3c388d
+    margin: 0
 
     .disabled
       cursor: default !important
@@ -232,71 +234,13 @@
         color: #9a9a9a
         margin-left: 6px
 
-    .navbar-header
-      border-right: solid 1px #ccc
-      height: 40px
-      a
-        margin: 10px 0 0 10px
+    .navbar-inner
 
       .navbar-brand
-        background: image_url('tusur_logotype.png') no-repeat
-        height: 24px
-        width: 219px
-        margin-top: 7px
-        padding: 0
-
-    .nav.navbar-nav
-      border-right: solid 1px #ccc
-
-      .open
-        .dropdown-toggle
-          background: #f3f3f3
-          color: #000
-          z-index: 1101
-
-        .dropdown-menu
-          +border-radius(0)
-          +box-shadow(none)
-          background: #f3f3f3
-          border-top: 0
-          left: -1px
-
-          li
-            a
-              color: #000
-              padding: 3px 15px
-              text-decoration: none
-
-              &:hover
-                color: #005bae
-                background: #e5e5e5
-                text-decoration: none
-
-            &.active a
-              color: #fff
-              text-decoration: none
-
-      &.navbar-right
-        border-left: solid 1px #ccc
-        border-right: none
-
-        a
-          text-decoration: none
-
-        &:last-child
-          margin-right: 0
-
-        .open
-          .dropdown-menu
-            +border-radius(0)
-            +box-shadow(none)
-            background: #f3f3f3
-            border-top: 0
-            left: auto
-
-    li
-      a
-        color: #000
+        background: image_url('logotype.svg') no-repeat
+        height: 46px
+        width: 164px
+        margin: 0
 
 .auth_block
   border: none !important
@@ -349,9 +293,3 @@
 
     .active
       background: #fff !important
-
-  .tusur_header_wrapper
-    height: 40px
-
-  #menu_first, #menu_second
-    display: none
